@@ -1,0 +1,892 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://ipb/ontologi_obatt"
+     xml:base="http://ipb/ontologi_obatt"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ontologi_obatt="http://ipb/ontologi_obatt#"
+     xmlns:ontologi="http://ipb/ontologi#">
+    <owl:Ontology rdf:about="http://ipb/ontologi_obatt">
+        <ontologi:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ontologi tanaman obat Indonesia</ontologi:description>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ipb/ontologi#description -->
+
+    <owl:AnnotationProperty rdf:about="http://ipb/ontologi#description"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ipb/ontologi_obatt#bagian_yang_digunakan -->
+
+    <owl:ObjectProperty rdf:about="http://ipb/ontologi_obatt#bagian_yang_digunakan"/>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#diobati_oleh -->
+
+    <owl:ObjectProperty rdf:about="http://ipb/ontologi_obatt#diobati_oleh">
+        <owl:inverseOf rdf:resource="http://ipb/ontologi_obatt#mengobati"/>
+        <rdfs:domain rdf:resource="http://ipb/ontologi_obatt#penyakit"/>
+        <rdfs:range rdf:resource="http://ipb/ontologi_obatt#tanaman_obat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#kandungan_senyawa_dari -->
+
+    <owl:ObjectProperty rdf:about="http://ipb/ontologi_obatt#kandungan_senyawa_dari">
+        <owl:inverseOf rdf:resource="http://ipb/ontologi_obatt#memiliki_kandungan_senyawa"/>
+        <rdfs:domain rdf:resource="http://ipb/ontologi_obatt#kandungan_senyawa"/>
+        <rdfs:range rdf:resource="http://ipb/ontologi_obatt#tanaman_obat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#memiliki_aktivitas_senyawa -->
+
+    <owl:ObjectProperty rdf:about="http://ipb/ontologi_obatt#memiliki_aktivitas_senyawa">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ipb/ontologi_obatt#tanaman_obat"/>
+        <rdfs:range rdf:resource="http://ipb/ontologi_obatt#aktivitas_senyawa"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#memiliki_kandungan_senyawa -->
+
+    <owl:ObjectProperty rdf:about="http://ipb/ontologi_obatt#memiliki_kandungan_senyawa">
+        <rdfs:domain rdf:resource="http://ipb/ontologi_obatt#tanaman_obat"/>
+        <rdfs:range rdf:resource="http://ipb/ontologi_obatt#kandungan_senyawa"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#memiliki_nama_daerah -->
+
+    <owl:ObjectProperty rdf:about="http://ipb/ontologi_obatt#memiliki_nama_daerah">
+        <owl:inverseOf rdf:resource="http://ipb/ontologi_obatt#nama_daerah_dari"/>
+        <rdfs:domain rdf:resource="http://ipb/ontologi_obatt#tanaman_obat"/>
+        <rdfs:range rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#memiliki_nama_latin -->
+
+    <owl:ObjectProperty rdf:about="http://ipb/ontologi_obatt#memiliki_nama_latin">
+        <owl:inverseOf rdf:resource="http://ipb/ontologi_obatt#nama_latin_dari"/>
+        <rdfs:domain rdf:resource="http://ipb/ontologi_obatt#tanaman_obat"/>
+        <rdfs:range rdf:resource="http://ipb/ontologi_obatt#nama_latin"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#mengobati -->
+
+    <owl:ObjectProperty rdf:about="http://ipb/ontologi_obatt#mengobati">
+        <rdfs:domain rdf:resource="http://ipb/ontologi_obatt#tanaman_obat"/>
+        <rdfs:range rdf:resource="http://ipb/ontologi_obatt#penyakit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#nama_daerah_dari -->
+
+    <owl:ObjectProperty rdf:about="http://ipb/ontologi_obatt#nama_daerah_dari">
+        <rdfs:domain rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+        <rdfs:range rdf:resource="http://ipb/ontologi_obatt#tanaman_obat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#nama_latin_dari -->
+
+    <owl:ObjectProperty rdf:about="http://ipb/ontologi_obatt#nama_latin_dari">
+        <rdfs:domain rdf:resource="http://ipb/ontologi_obatt#nama_latin"/>
+        <rdfs:range rdf:resource="http://ipb/ontologi_obatt#tanaman_obat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ipb/ontologi_obatt#memiliki_efek_tanaman -->
+
+    <owl:DatatypeProperty rdf:about="http://ipb/ontologi_obatt#memiliki_efek_tanaman"/>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#memiliki_kontraindikasi -->
+
+    <owl:DatatypeProperty rdf:about="http://ipb/ontologi_obatt#memiliki_kontraindikasi"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ipb/ontologi_obatt#aktivitas_senyawa -->
+
+    <owl:Class rdf:about="http://ipb/ontologi_obatt#aktivitas_senyawa">
+        <rdfs:subClassOf rdf:resource="http://ipb/ontologi_obatt#kandungan_senyawa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#bagian_tanaman -->
+
+    <owl:Class rdf:about="http://ipb/ontologi_obatt#bagian_tanaman"/>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#cara_pemanfaatan -->
+
+    <owl:Class rdf:about="http://ipb/ontologi_obatt#cara_pemanfaatan"/>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#efek_samping -->
+
+    <owl:Class rdf:about="http://ipb/ontologi_obatt#efek_samping">
+        <rdfs:subClassOf rdf:resource="http://ipb/ontologi_obatt#efek_tanaman"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#efek_tanaman -->
+
+    <owl:Class rdf:about="http://ipb/ontologi_obatt#efek_tanaman"/>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#kandungan_senyawa -->
+
+    <owl:Class rdf:about="http://ipb/ontologi_obatt#kandungan_senyawa"/>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#kontraindikasi -->
+
+    <owl:Class rdf:about="http://ipb/ontologi_obatt#kontraindikasi">
+        <rdfs:subClassOf rdf:resource="http://ipb/ontologi_obatt#efek_tanaman"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#manfaat_tanaman -->
+
+    <owl:Class rdf:about="http://ipb/ontologi_obatt#manfaat_tanaman"/>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#nama_daerah -->
+
+    <owl:Class rdf:about="http://ipb/ontologi_obatt#nama_daerah">
+        <rdfs:subClassOf rdf:resource="http://ipb/ontologi_obatt#nama_tanaman_obat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#nama_latin -->
+
+    <owl:Class rdf:about="http://ipb/ontologi_obatt#nama_latin">
+        <rdfs:subClassOf rdf:resource="http://ipb/ontologi_obatt#nama_tanaman_obat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#nama_tanaman_obat -->
+
+    <owl:Class rdf:about="http://ipb/ontologi_obatt#nama_tanaman_obat"/>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#penyakit -->
+
+    <owl:Class rdf:about="http://ipb/ontologi_obatt#penyakit"/>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#tanaman_obat -->
+
+    <owl:Class rdf:about="http://ipb/ontologi_obatt#tanaman_obat"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ipb/ontologi_obat#diare -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obat#diare"/>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#Abrus_precatorius_L -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#Abrus_precatorius_L">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_latin"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#Saga"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#ailalu_picar(Ambon)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#idi_idi_malako(Ternate_Tidore)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#kaca(Bugis)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#kalepip(Kalana)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#kanderi(Lampung)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#kundi(Minangkabau)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#maat_metan(Timor)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#parusa(Mentawai)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#piling_piling(Jawa)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#seklawan(Buru)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#seugew(Gayo)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#taning_bajang(Dayak)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#thaga(Aceh)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#walipopo(Gorontalo)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#Curcuma_xanthorriza_Roxb -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#Curcuma_xanthorriza_Roxb">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_latin"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#Temulawak"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#kong_gede(Sunda)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#temu_latah(Madura)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#Elephantocopus_scaber_L -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#Elephantocopus_scaber_L">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_latin"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#Tapak_liman"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#balagaduk(Jawa)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#jukut_cancang(Jawa)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#talpak_tana(Madura)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#tapak_tangan(Jawa)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#tutup_bumi(Sumatera)"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#Saga -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#Saga">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#tanaman_obat"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#ailalu_picar(Ambon)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#idi_idi_malako(Ternate_Tidore)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#kaca(Bugis)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#kalepip(Kalana)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#kanderi(Lampung)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#kundi(Minangkabau)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#maat_metan(Timor)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#parusa(Mentawai)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#piling_piling(Jawa)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#seklawan(Buru)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#seugew(Gayo)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#taning_bajang(Dayak)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#thaga(Aceh)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#walipopo(Gorontalo)"/>
+        <ontologi_obatt:bagian_yang_digunakan rdf:resource="http://ipb/ontologi_obatt#daun"/>
+        <ontologi_obatt:memiliki_aktivitas_senyawa rdf:resource="http://ipb/ontologi_obatt#anti_alergi"/>
+        <ontologi_obatt:memiliki_aktivitas_senyawa rdf:resource="http://ipb/ontologi_obatt#anti_inflamasi"/>
+        <ontologi_obatt:memiliki_aktivitas_senyawa rdf:resource="http://ipb/ontologi_obatt#menghilangkan_alergi"/>
+        <ontologi_obatt:memiliki_aktivitas_senyawa rdf:resource="http://ipb/ontologi_obatt#menghilangkan_rasa_nyeri"/>
+        <ontologi_obatt:memiliki_kandungan_senyawa rdf:resource="http://ipb/ontologi_obatt#glycyrrhizin"/>
+        <ontologi_obatt:memiliki_kandungan_senyawa rdf:resource="http://ipb/ontologi_obatt#isoflavoquinon"/>
+        <ontologi_obatt:memiliki_nama_latin rdf:resource="http://ipb/ontologi_obatt#Abrus_precatorius_L"/>
+        <ontologi_obatt:mengobati rdf:resource="http://ipb/ontologi_obatt#batuk"/>
+        <ontologi_obatt:mengobati rdf:resource="http://ipb/ontologi_obatt#demam"/>
+        <ontologi_obatt:mengobati rdf:resource="http://ipb/ontologi_obatt#hepatitis"/>
+        <ontologi_obatt:mengobati rdf:resource="http://ipb/ontologi_obatt#keracunan"/>
+        <ontologi_obatt:mengobati rdf:resource="http://ipb/ontologi_obatt#sariawan"/>
+        <ontologi_obatt:memiliki_efek_tanaman rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Penggunaan lama menyebabkan udem dan tekanan darah tinggi</ontologi_obatt:memiliki_efek_tanaman>
+        <ontologi_obatt:memiliki_kontraindikasi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gangguan jantung</ontologi_obatt:memiliki_kontraindikasi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#Tapak_liman -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#Tapak_liman">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#tanaman_obat"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#balagaduk(Jawa)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#jukut_cancang(Jawa)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#talpak_tana(Madura)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#tapak_tangan(Jawa)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#tutup_bumi(Sumatera)"/>
+        <ontologi_obatt:memiliki_kandungan_senyawa rdf:resource="http://ipb/ontologi_obatt#fenol"/>
+        <ontologi_obatt:memiliki_kandungan_senyawa rdf:resource="http://ipb/ontologi_obatt#flavonoida"/>
+        <ontologi_obatt:memiliki_kandungan_senyawa rdf:resource="http://ipb/ontologi_obatt#tanin"/>
+        <ontologi_obatt:memiliki_nama_latin rdf:resource="http://ipb/ontologi_obatt#Elephantocopus_scaber_L"/>
+        <ontologi_obatt:mengobati rdf:resource="http://ipb/ontologi_obatt#kejang"/>
+        <ontologi_obatt:mengobati rdf:resource="http://ipb/ontologi_obatt#letih/lesu"/>
+        <ontologi_obatt:memiliki_efek_tanaman rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gemetar dan kelemahan otot</ontologi_obatt:memiliki_efek_tanaman>
+        <ontologi_obatt:memiliki_kontraindikasi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kehamilan</ontologi_obatt:memiliki_kontraindikasi>
+        <ontologi_obatt:memiliki_kontraindikasi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">menyusui</ontologi_obatt:memiliki_kontraindikasi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#Temulawak -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#Temulawak">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#tanaman_obat"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#kong_gede(Sunda)"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#temu_latah(Madura)"/>
+        <ontologi_obatt:bagian_yang_digunakan rdf:resource="http://ipb/ontologi_obatt#rimpang"/>
+        <ontologi_obatt:memiliki_kandungan_senyawa rdf:resource="http://ipb/ontologi_obatt#kurkumin"/>
+        <ontologi_obatt:memiliki_kandungan_senyawa rdf:resource="http://ipb/ontologi_obatt#minyak_atsiri"/>
+        <ontologi_obatt:memiliki_kandungan_senyawa rdf:resource="http://ipb/ontologi_obatt#xanthorizol"/>
+        <ontologi_obatt:memiliki_nama_latin rdf:resource="http://ipb/ontologi_obatt#Curcuma_xanthorriza_Roxb"/>
+        <ontologi_obatt:mengobati rdf:resource="http://ipb/ontologi_obat#diare"/>
+        <ontologi_obatt:mengobati rdf:resource="http://ipb/ontologi_obatt#batuk"/>
+        <ontologi_obatt:mengobati rdf:resource="http://ipb/ontologi_obatt#demam"/>
+        <ontologi_obatt:mengobati rdf:resource="http://ipb/ontologi_obatt#sariawan"/>
+        <ontologi_obatt:memiliki_efek_tanaman rdf:datatype="http://www.w3.org/2001/XMLSchema#string">merangsang lambung</ontologi_obatt:memiliki_efek_tanaman>
+        <ontologi_obatt:memiliki_kontraindikasi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sakit batu empedu</ontologi_obatt:memiliki_kontraindikasi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#akar -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#akar">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#bagian_tanaman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#anti_alergi -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#anti_alergi">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#aktivitas_senyawa"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#menghilangkan_alergi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#anti_diabetes -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#anti_diabetes">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#aktivitas_senyawa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#anti_inflamasi -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#anti_inflamasi">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#aktivitas_senyawa"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#menghilangkan_rasa_nyeri"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#anti_mikroba -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#anti_mikroba">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#aktivitas_senyawa"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#mengobati_jamur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#anti_racun -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#anti_racun">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#aktivitas_senyawa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#anti_tumor -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#anti_tumor">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#aktivitas_senyawa"/>
+        <owl:sameAs rdf:resource="http://ipb/ontologi_obatt#mengobati_tumor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#batang -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#batang">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#bagian_tanaman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#batuk -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#batuk">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#penyakit"/>
+        <ontologi_obatt:diobati_oleh rdf:resource="http://ipb/ontologi_obatt#Saga"/>
+        <ontologi_obatt:diobati_oleh rdf:resource="http://ipb/ontologi_obatt#Tapak_liman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#biji -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#biji">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#bagian_tanaman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#buah -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#buah">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#bagian_tanaman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#daun -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#daun">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#bagian_tanaman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#demam -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#demam">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#penyakit"/>
+        <ontologi_obatt:diobati_oleh rdf:resource="http://ipb/ontologi_obatt#Saga"/>
+        <ontologi_obatt:diobati_oleh rdf:resource="http://ipb/ontologi_obatt#Tapak_liman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#fenol -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#fenol">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#kandungan_senyawa"/>
+        <ontologi_obatt:kandungan_senyawa_dari rdf:resource="http://ipb/ontologi_obatt#Tapak_liman"/>
+        <ontologi_obatt:memiliki_aktivitas_senyawa rdf:resource="http://ipb/ontologi_obatt#anti_mikroba"/>
+        <ontologi_obatt:memiliki_aktivitas_senyawa rdf:resource="http://ipb/ontologi_obatt#mengobati_jamur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#flavonoida -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#flavonoida">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#kandungan_senyawa"/>
+        <ontologi_obatt:kandungan_senyawa_dari rdf:resource="http://ipb/ontologi_obatt#Tapak_liman"/>
+        <ontologi_obatt:memiliki_aktivitas_senyawa rdf:resource="http://ipb/ontologi_obatt#anti_diabetes"/>
+        <ontologi_obatt:memiliki_aktivitas_senyawa rdf:resource="http://ipb/ontologi_obatt#anti_tumor"/>
+        <ontologi_obatt:memiliki_aktivitas_senyawa rdf:resource="http://ipb/ontologi_obatt#mengobati_tumor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#glycyrrhizin -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#glycyrrhizin">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#kandungan_senyawa"/>
+        <ontologi_obatt:kandungan_senyawa_dari rdf:resource="http://ipb/ontologi_obatt#Saga"/>
+        <ontologi_obatt:memiliki_aktivitas_senyawa rdf:resource="http://ipb/ontologi_obatt#anti_inflamasi"/>
+        <ontologi_obatt:memiliki_aktivitas_senyawa rdf:resource="http://ipb/ontologi_obatt#menghilangkan_rasa_nyeri"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#hepatitis -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#hepatitis">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#penyakit"/>
+        <ontologi_obatt:diobati_oleh rdf:resource="http://ipb/ontologi_obatt#Saga"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#isoflavoquinon -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#isoflavoquinon">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#kandungan_senyawa"/>
+        <ontologi_obatt:kandungan_senyawa_dari rdf:resource="http://ipb/ontologi_obatt#Saga"/>
+        <ontologi_obatt:memiliki_aktivitas_senyawa rdf:resource="http://ipb/ontologi_obatt#anti_alergi"/>
+        <ontologi_obatt:memiliki_aktivitas_senyawa rdf:resource="http://ipb/ontologi_obatt#menghilangkan_alergi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#kejang -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#kejang">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#penyakit"/>
+        <ontologi_obatt:diobati_oleh rdf:resource="http://ipb/ontologi_obatt#Temulawak"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#keracunan -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#keracunan">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#penyakit"/>
+        <ontologi_obatt:diobati_oleh rdf:resource="http://ipb/ontologi_obatt#Saga"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#kurkumin -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#kurkumin">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#kandungan_senyawa"/>
+        <ontologi_obatt:kandungan_senyawa_dari rdf:resource="http://ipb/ontologi_obatt#Temulawak"/>
+        <ontologi_obatt:memiliki_aktivitas_senyawa rdf:resource="http://ipb/ontologi_obatt#menurunkan_kolestrol"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#menghilangkan_alergi -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#menghilangkan_alergi">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#aktivitas_senyawa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#menghilangkan_rasa_nyeri -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#menghilangkan_rasa_nyeri">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#aktivitas_senyawa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#mengobati_jamur -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#mengobati_jamur">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#aktivitas_senyawa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#mengobati_tumor -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#mengobati_tumor">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#aktivitas_senyawa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#menurunkan_kolestrol -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#menurunkan_kolestrol">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#aktivitas_senyawa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#minyak_atsiri -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#minyak_atsiri">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#kandungan_senyawa"/>
+        <ontologi_obatt:kandungan_senyawa_dari rdf:resource="http://ipb/ontologi_obatt#Temulawak"/>
+        <ontologi_obatt:memiliki_aktivitas_senyawa rdf:resource="http://ipb/ontologi_obatt#menurunkan_kolestrol"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#penyembuh_luka -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#penyembuh_luka">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#aktivitas_senyawa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#rimpang -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#rimpang">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#bagian_tanaman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#sariawan -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#sariawan">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#penyakit"/>
+        <ontologi_obatt:diobati_oleh rdf:resource="http://ipb/ontologi_obatt#Saga"/>
+        <ontologi_obatt:diobati_oleh rdf:resource="http://ipb/ontologi_obatt#Tapak_liman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#tanin -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#tanin">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#kandungan_senyawa"/>
+        <ontologi_obatt:kandungan_senyawa_dari rdf:resource="http://ipb/ontologi_obatt#Tapak_liman"/>
+        <ontologi_obatt:memiliki_aktivitas_senyawa rdf:resource="http://ipb/ontologi_obatt#anti_racun"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#xanthorizol -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#xanthorizol">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#kandungan_senyawa"/>
+        <ontologi_obatt:kandungan_senyawa_dari rdf:resource="http://ipb/ontologi_obatt#Temulawak"/>
+        <ontologi_obatt:memiliki_aktivitas_senyawa rdf:resource="http://ipb/ontologi_obatt#menurunkan_kolestrol"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#ailalu_picar(Ambon) -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#ailalu_picar(Ambon)">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#balagaduk(Jawa) -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#balagaduk(Jawa)">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#idi_idi_malako(Ternate_Tidore) -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#idi_idi_malako(Ternate_Tidore)">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#jukut_cancang(Jawa) -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#jukut_cancang(Jawa)">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#kaca(Bugis) -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#kaca(Bugis)">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#kalepip(Kalana) -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#kalepip(Kalana)">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#kanderi(Lampung) -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#kanderi(Lampung)">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#kong_gede(Sunda) -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#kong_gede(Sunda)">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#kundi(Minangkabau) -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#kundi(Minangkabau)">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#letih/lesu -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#letih/lesu">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#penyakit"/>
+        <ontologi_obatt:bagian_yang_digunakan rdf:resource="http://ipb/ontologi_obatt#daun"/>
+        <ontologi_obatt:diobati_oleh rdf:resource="http://ipb/ontologi_obatt#Temulawak"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#maat_metan(Timor) -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#maat_metan(Timor)">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#parusa(Mentawai) -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#parusa(Mentawai)">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#piling_piling(Jawa) -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#piling_piling(Jawa)">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#seklawan(Buru) -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#seklawan(Buru)">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#seugew(Gayo) -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#seugew(Gayo)">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#talpak_tana(Madura) -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#talpak_tana(Madura)">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#taning_bajang(Dayak) -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#taning_bajang(Dayak)">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#tapak_tangan(Jawa) -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#tapak_tangan(Jawa)">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#temu_latah(Madura) -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#temu_latah(Madura)">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#thaga(Aceh) -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#thaga(Aceh)">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#tutup_bumi(Sumatera) -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#tutup_bumi(Sumatera)">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ipb/ontologi_obatt#walipopo(Gorontalo) -->
+
+    <owl:NamedIndividual rdf:about="http://ipb/ontologi_obatt#walipopo(Gorontalo)">
+        <rdf:type rdf:resource="http://ipb/ontologi_obatt#nama_daerah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://ipb/ontologi_obatt#glycyrrhizin"/>
+            <rdf:Description rdf:about="http://ipb/ontologi_obatt#isoflavoquinon"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
