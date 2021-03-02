@@ -1,0 +1,597 @@
+@prefix : <http://ipb/ontologi_obatt> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ontologi: <http://ipb/ontologi#> .
+@prefix ontologi_obatt: <http://ipb/ontologi_obatt#> .
+@base <http://ipb/ontologi_obat> .
+
+<http://ipb/ontologi_obat> rdf:type owl:Ontology ;
+                            ontologi:description "Ontologi tanaman obat Indonesia"^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://ipb/ontologi#description
+ontologi:description rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://ipb/ontologi_obat#bagian_yang_digunakan
+:bagian_yang_digunakan rdf:type owl:ObjectProperty .
+
+
+###  http://ipb/ontologi_obat#diobati_oleh
+:diobati_oleh rdf:type owl:ObjectProperty ;
+              owl:inverseOf :mengobati ;
+              rdfs:domain :penyakit ;
+              rdfs:range :tanaman_obat .
+
+
+###  http://ipb/ontologi_obat#kandungan_senyawa_dari
+:kandungan_senyawa_dari rdf:type owl:ObjectProperty ;
+                        owl:inverseOf :memiliki_kandungan_senyawa ;
+                        rdfs:domain :kandungan_senyawa ;
+                        rdfs:range :tanaman_obat .
+
+
+###  http://ipb/ontologi_obat#memiliki_aktivitas_senyawa
+:memiliki_aktivitas_senyawa rdf:type owl:ObjectProperty ,
+                                     owl:InverseFunctionalProperty ;
+                            rdfs:domain :tanaman_obat ;
+                            rdfs:range :aktivitas_senyawa .
+
+
+###  http://ipb/ontologi_obat#memiliki_kandungan_senyawa
+:memiliki_kandungan_senyawa rdf:type owl:ObjectProperty ;
+                            rdfs:domain :tanaman_obat ;
+                            rdfs:range :kandungan_senyawa .
+
+
+###  http://ipb/ontologi_obat#memiliki_nama_daerah
+:memiliki_nama_daerah rdf:type owl:ObjectProperty ;
+                      owl:inverseOf :nama_daerah_dari ;
+                      rdfs:domain :tanaman_obat ;
+                      rdfs:range :nama_daerah .
+
+
+###  http://ipb/ontologi_obat#memiliki_nama_latin
+:memiliki_nama_latin rdf:type owl:ObjectProperty ;
+                     owl:inverseOf :nama_latin_dari ;
+                     rdfs:domain :tanaman_obat ;
+                     rdfs:range :nama_latin .
+
+
+###  http://ipb/ontologi_obat#mengobati
+:mengobati rdf:type owl:ObjectProperty ;
+           rdfs:domain :tanaman_obat ;
+           rdfs:range :penyakit .
+
+
+###  http://ipb/ontologi_obat#nama_daerah_dari
+:nama_daerah_dari rdf:type owl:ObjectProperty ;
+                  rdfs:domain :nama_daerah ;
+                  rdfs:range :tanaman_obat .
+
+
+###  http://ipb/ontologi_obat#nama_latin_dari
+:nama_latin_dari rdf:type owl:ObjectProperty ;
+                 rdfs:domain :nama_latin ;
+                 rdfs:range :tanaman_obat .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://ipb/ontologi_obat#memiliki_efek_tanaman
+:memiliki_efek_tanaman rdf:type owl:DatatypeProperty .
+
+
+###  http://ipb/ontologi_obat#memiliki_kontraindikasi
+:memiliki_kontraindikasi rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://ipb/ontologi_obat#aktivitas_senyawa
+:aktivitas_senyawa rdf:type owl:Class ;
+                   rdfs:subClassOf :kandungan_senyawa .
+
+
+###  http://ipb/ontologi_obat#bagian_tanaman
+:bagian_tanaman rdf:type owl:Class .
+
+
+###  http://ipb/ontologi_obat#cara_pemanfaatan
+:cara_pemanfaatan rdf:type owl:Class .
+
+
+###  http://ipb/ontologi_obat#efek_samping
+:efek_samping rdf:type owl:Class ;
+              rdfs:subClassOf :efek_tanaman .
+
+
+###  http://ipb/ontologi_obat#efek_tanaman
+:efek_tanaman rdf:type owl:Class .
+
+
+###  http://ipb/ontologi_obat#kandungan_senyawa
+:kandungan_senyawa rdf:type owl:Class .
+
+
+###  http://ipb/ontologi_obat#kontraindikasi
+:kontraindikasi rdf:type owl:Class ;
+                rdfs:subClassOf :efek_tanaman .
+
+
+###  http://ipb/ontologi_obat#manfaat_tanaman
+:manfaat_tanaman rdf:type owl:Class .
+
+
+###  http://ipb/ontologi_obat#nama_daerah
+:nama_daerah rdf:type owl:Class ;
+             rdfs:subClassOf :nama_tanaman_obat .
+
+
+###  http://ipb/ontologi_obat#nama_latin
+:nama_latin rdf:type owl:Class ;
+            rdfs:subClassOf :nama_tanaman_obat .
+
+
+###  http://ipb/ontologi_obat#nama_tanaman_obat
+:nama_tanaman_obat rdf:type owl:Class .
+
+
+###  http://ipb/ontologi_obat#penyakit
+:penyakit rdf:type owl:Class .
+
+
+###  http://ipb/ontologi_obat#tanaman_obat
+:tanaman_obat rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://ipb/ontologi_obat#Abrus_precatorius_L
+:Abrus_precatorius_L rdf:type owl:NamedIndividual ,
+                              :nama_latin ;
+                     owl:sameAs :Saga ,
+                                <http://ipb/ontologi_obat#ailalu_picar(Ambon)> ,
+                                <http://ipb/ontologi_obat#idi_idi_malako(Ternate_Tidore)> ,
+                                <http://ipb/ontologi_obat#kaca(Bugis)> ,
+                                <http://ipb/ontologi_obat#kalepip(Kalana)> ,
+                                <http://ipb/ontologi_obat#kanderi(Lampung)> ,
+                                <http://ipb/ontologi_obat#kundi(Minangkabau)> ,
+                                <http://ipb/ontologi_obat#maat_metan(Timor)> ,
+                                <http://ipb/ontologi_obat#parusa(Mentawai)> ,
+                                <http://ipb/ontologi_obat#piling_piling(Jawa)> ,
+                                <http://ipb/ontologi_obat#seklawan(Buru)> ,
+                                <http://ipb/ontologi_obat#seugew(Gayo)> ,
+                                <http://ipb/ontologi_obat#taning_bajang(Dayak)> ,
+                                <http://ipb/ontologi_obat#thaga(Aceh)> ,
+                                <http://ipb/ontologi_obat#walipopo(Gorontalo)> .
+
+
+###  http://ipb/ontologi_obat#Curcuma_xanthorriza_Roxb
+:Curcuma_xanthorriza_Roxb rdf:type owl:NamedIndividual ,
+                                   :nama_latin ;
+                          owl:sameAs :Temulawak ,
+                                     <http://ipb/ontologi_obat#kong_gede(Sunda)> ,
+                                     <http://ipb/ontologi_obat#temu_latah(Madura)> .
+
+
+###  http://ipb/ontologi_obat#Elephantocopus_scaber_L
+:Elephantocopus_scaber_L rdf:type owl:NamedIndividual ,
+                                  :nama_latin ;
+                         owl:sameAs :Tapak_liman ,
+                                    <http://ipb/ontologi_obat#balagaduk(Jawa)> ,
+                                    <http://ipb/ontologi_obat#jukut_cancang(Jawa)> ,
+                                    <http://ipb/ontologi_obat#talpak_tana(Madura)> ,
+                                    <http://ipb/ontologi_obat#tapak_tangan(Jawa)> ,
+                                    <http://ipb/ontologi_obat#tutup_bumi(Sumatera)> .
+
+
+###  http://ipb/ontologi_obat#Saga
+:Saga rdf:type owl:NamedIndividual ,
+               :tanaman_obat ;
+      owl:sameAs <http://ipb/ontologi_obat#ailalu_picar(Ambon)> ,
+                 <http://ipb/ontologi_obat#idi_idi_malako(Ternate_Tidore)> ,
+                 <http://ipb/ontologi_obat#kaca(Bugis)> ,
+                 <http://ipb/ontologi_obat#kalepip(Kalana)> ,
+                 <http://ipb/ontologi_obat#kanderi(Lampung)> ,
+                 <http://ipb/ontologi_obat#kundi(Minangkabau)> ,
+                 <http://ipb/ontologi_obat#maat_metan(Timor)> ,
+                 <http://ipb/ontologi_obat#parusa(Mentawai)> ,
+                 <http://ipb/ontologi_obat#piling_piling(Jawa)> ,
+                 <http://ipb/ontologi_obat#seklawan(Buru)> ,
+                 <http://ipb/ontologi_obat#seugew(Gayo)> ,
+                 <http://ipb/ontologi_obat#taning_bajang(Dayak)> ,
+                 <http://ipb/ontologi_obat#thaga(Aceh)> ,
+                 <http://ipb/ontologi_obat#walipopo(Gorontalo)> ;
+      :bagian_yang_digunakan :daun ;
+      :memiliki_aktivitas_senyawa :anti_alergi ,
+                                  :anti_inflamasi ,
+                                  :menghilangkan_alergi ,
+                                  :menghilangkan_rasa_nyeri ;
+      :memiliki_kandungan_senyawa :glycyrrhizin ,
+                                  :isoflavoquinon ;
+      :memiliki_nama_latin :Abrus_precatorius_L ;
+      :mengobati :batuk ,
+                 :demam ,
+                 :hepatitis ,
+                 :keracunan ,
+                 :sariawan ;
+      :memiliki_efek_tanaman "Penggunaan lama menyebabkan udem dan tekanan darah tinggi"^^xsd:string ;
+      :memiliki_kontraindikasi "Gangguan jantung"^^xsd:string .
+
+
+###  http://ipb/ontologi_obat#Tapak_liman
+:Tapak_liman rdf:type owl:NamedIndividual ,
+                      :tanaman_obat ;
+             owl:sameAs <http://ipb/ontologi_obat#balagaduk(Jawa)> ,
+                        <http://ipb/ontologi_obat#jukut_cancang(Jawa)> ,
+                        <http://ipb/ontologi_obat#talpak_tana(Madura)> ,
+                        <http://ipb/ontologi_obat#tapak_tangan(Jawa)> ,
+                        <http://ipb/ontologi_obat#tutup_bumi(Sumatera)> ;
+             :memiliki_kandungan_senyawa :fenol ,
+                                         :flavonoida ,
+                                         :tanin ;
+             :memiliki_nama_latin :Elephantocopus_scaber_L ;
+             :mengobati :kejang ,
+                        <http://ipb/ontologi_obat#letih/lesu> ;
+             :memiliki_efek_tanaman "gemetar dan kelemahan otot"^^xsd:string ;
+             :memiliki_kontraindikasi "kehamilan"^^xsd:string ,
+                                      "menyusui"^^xsd:string .
+
+
+###  http://ipb/ontologi_obat#Temulawak
+:Temulawak rdf:type owl:NamedIndividual ,
+                    :tanaman_obat ;
+           owl:sameAs <http://ipb/ontologi_obat#kong_gede(Sunda)> ,
+                      <http://ipb/ontologi_obat#temu_latah(Madura)> ;
+           :bagian_yang_digunakan :rimpang ;
+           :memiliki_kandungan_senyawa :kurkumin ,
+                                       :minyak_atsiri ,
+                                       :xanthorizol ;
+           :memiliki_nama_latin :Curcuma_xanthorriza_Roxb ;
+           :mengobati :batuk ,
+                      :demam ,
+                      :diare ,
+                      :sariawan ;
+           :memiliki_efek_tanaman "merangsang lambung"^^xsd:string ;
+           :memiliki_kontraindikasi "sakit batu empedu"^^xsd:string .
+
+
+###  http://ipb/ontologi_obat#akar
+:akar rdf:type owl:NamedIndividual ,
+               :bagian_tanaman .
+
+
+###  http://ipb/ontologi_obat#anti_alergi
+:anti_alergi rdf:type owl:NamedIndividual ,
+                      :aktivitas_senyawa ;
+             owl:sameAs :menghilangkan_alergi .
+
+
+###  http://ipb/ontologi_obat#anti_diabetes
+:anti_diabetes rdf:type owl:NamedIndividual ,
+                        :aktivitas_senyawa .
+
+
+###  http://ipb/ontologi_obat#anti_inflamasi
+:anti_inflamasi rdf:type owl:NamedIndividual ,
+                         :aktivitas_senyawa ;
+                owl:sameAs :menghilangkan_rasa_nyeri .
+
+
+###  http://ipb/ontologi_obat#anti_mikroba
+:anti_mikroba rdf:type owl:NamedIndividual ,
+                       :aktivitas_senyawa ;
+              owl:sameAs :mengobati_jamur .
+
+
+###  http://ipb/ontologi_obat#anti_racun
+:anti_racun rdf:type owl:NamedIndividual ,
+                     :aktivitas_senyawa .
+
+
+###  http://ipb/ontologi_obat#anti_tumor
+:anti_tumor rdf:type owl:NamedIndividual ,
+                     :aktivitas_senyawa ;
+            owl:sameAs :mengobati_tumor .
+
+
+###  http://ipb/ontologi_obat#batang
+:batang rdf:type owl:NamedIndividual ,
+                 :bagian_tanaman .
+
+
+###  http://ipb/ontologi_obat#batuk
+:batuk rdf:type owl:NamedIndividual ,
+                :penyakit ;
+       :diobati_oleh :Saga ,
+                     :Tapak_liman .
+
+
+###  http://ipb/ontologi_obat#biji
+:biji rdf:type owl:NamedIndividual ,
+               :bagian_tanaman .
+
+
+###  http://ipb/ontologi_obat#buah
+:buah rdf:type owl:NamedIndividual ,
+               :bagian_tanaman .
+
+
+###  http://ipb/ontologi_obat#daun
+:daun rdf:type owl:NamedIndividual ,
+               :bagian_tanaman .
+
+
+###  http://ipb/ontologi_obat#demam
+:demam rdf:type owl:NamedIndividual ,
+                :penyakit ;
+       :diobati_oleh :Saga ,
+                     :Tapak_liman .
+
+
+###  http://ipb/ontologi_obat#diare
+:diare rdf:type owl:NamedIndividual .
+
+
+###  http://ipb/ontologi_obat#fenol
+:fenol rdf:type owl:NamedIndividual ,
+                :kandungan_senyawa ;
+       :kandungan_senyawa_dari :Tapak_liman ;
+       :memiliki_aktivitas_senyawa :anti_mikroba ,
+                                   :mengobati_jamur .
+
+
+###  http://ipb/ontologi_obat#flavonoida
+:flavonoida rdf:type owl:NamedIndividual ,
+                     :kandungan_senyawa ;
+            :kandungan_senyawa_dari :Tapak_liman ;
+            :memiliki_aktivitas_senyawa :anti_diabetes ,
+                                        :anti_tumor ,
+                                        :mengobati_tumor .
+
+
+###  http://ipb/ontologi_obat#glycyrrhizin
+:glycyrrhizin rdf:type owl:NamedIndividual ,
+                       :kandungan_senyawa ;
+              :kandungan_senyawa_dari :Saga ;
+              :memiliki_aktivitas_senyawa :anti_inflamasi ,
+                                          :menghilangkan_rasa_nyeri .
+
+
+###  http://ipb/ontologi_obat#hepatitis
+:hepatitis rdf:type owl:NamedIndividual ,
+                    :penyakit ;
+           :diobati_oleh :Saga .
+
+
+###  http://ipb/ontologi_obat#isoflavoquinon
+:isoflavoquinon rdf:type owl:NamedIndividual ,
+                         :kandungan_senyawa ;
+                :kandungan_senyawa_dari :Saga ;
+                :memiliki_aktivitas_senyawa :anti_alergi ,
+                                            :menghilangkan_alergi .
+
+
+###  http://ipb/ontologi_obat#kejang
+:kejang rdf:type owl:NamedIndividual ,
+                 :penyakit ;
+        :diobati_oleh :Temulawak .
+
+
+###  http://ipb/ontologi_obat#keracunan
+:keracunan rdf:type owl:NamedIndividual ,
+                    :penyakit ;
+           :diobati_oleh :Saga .
+
+
+###  http://ipb/ontologi_obat#kurkumin
+:kurkumin rdf:type owl:NamedIndividual ,
+                   :kandungan_senyawa ;
+          :kandungan_senyawa_dari :Temulawak ;
+          :memiliki_aktivitas_senyawa :menurunkan_kolestrol .
+
+
+###  http://ipb/ontologi_obat#menghilangkan_alergi
+:menghilangkan_alergi rdf:type owl:NamedIndividual ,
+                               :aktivitas_senyawa .
+
+
+###  http://ipb/ontologi_obat#menghilangkan_rasa_nyeri
+:menghilangkan_rasa_nyeri rdf:type owl:NamedIndividual ,
+                                   :aktivitas_senyawa .
+
+
+###  http://ipb/ontologi_obat#mengobati_jamur
+:mengobati_jamur rdf:type owl:NamedIndividual ,
+                          :aktivitas_senyawa .
+
+
+###  http://ipb/ontologi_obat#mengobati_tumor
+:mengobati_tumor rdf:type owl:NamedIndividual ,
+                          :aktivitas_senyawa .
+
+
+###  http://ipb/ontologi_obat#menurunkan_kolestrol
+:menurunkan_kolestrol rdf:type owl:NamedIndividual ,
+                               :aktivitas_senyawa .
+
+
+###  http://ipb/ontologi_obat#minyak_atsiri
+:minyak_atsiri rdf:type owl:NamedIndividual ,
+                        :kandungan_senyawa ;
+               :kandungan_senyawa_dari :Temulawak ;
+               :memiliki_aktivitas_senyawa :menurunkan_kolestrol .
+
+
+###  http://ipb/ontologi_obat#penyembuh_luka
+:penyembuh_luka rdf:type owl:NamedIndividual ,
+                         :aktivitas_senyawa .
+
+
+###  http://ipb/ontologi_obat#rimpang
+:rimpang rdf:type owl:NamedIndividual ,
+                  :bagian_tanaman .
+
+
+###  http://ipb/ontologi_obat#sariawan
+:sariawan rdf:type owl:NamedIndividual ,
+                   :penyakit ;
+          :diobati_oleh :Saga ,
+                        :Tapak_liman .
+
+
+###  http://ipb/ontologi_obat#tanin
+:tanin rdf:type owl:NamedIndividual ,
+                :kandungan_senyawa ;
+       :kandungan_senyawa_dari :Tapak_liman ;
+       :memiliki_aktivitas_senyawa :anti_racun .
+
+
+###  http://ipb/ontologi_obat#xanthorizol
+:xanthorizol rdf:type owl:NamedIndividual ,
+                      :kandungan_senyawa ;
+             :kandungan_senyawa_dari :Temulawak ;
+             :memiliki_aktivitas_senyawa :menurunkan_kolestrol .
+
+
+###  http://ipb/ontologi_obat#ailalu_picar(Ambon)
+<http://ipb/ontologi_obat#ailalu_picar(Ambon)> rdf:type owl:NamedIndividual ,
+                                                        :nama_daerah .
+
+
+###  http://ipb/ontologi_obat#balagaduk(Jawa)
+<http://ipb/ontologi_obat#balagaduk(Jawa)> rdf:type owl:NamedIndividual ,
+                                                    :nama_daerah .
+
+
+###  http://ipb/ontologi_obat#idi_idi_malako(Ternate_Tidore)
+<http://ipb/ontologi_obat#idi_idi_malako(Ternate_Tidore)> rdf:type owl:NamedIndividual ,
+                                                                   :nama_daerah .
+
+
+###  http://ipb/ontologi_obat#jukut_cancang(Jawa)
+<http://ipb/ontologi_obat#jukut_cancang(Jawa)> rdf:type owl:NamedIndividual ,
+                                                        :nama_daerah .
+
+
+###  http://ipb/ontologi_obat#kaca(Bugis)
+<http://ipb/ontologi_obat#kaca(Bugis)> rdf:type owl:NamedIndividual ,
+                                                :nama_daerah .
+
+
+###  http://ipb/ontologi_obat#kalepip(Kalana)
+<http://ipb/ontologi_obat#kalepip(Kalana)> rdf:type owl:NamedIndividual ,
+                                                    :nama_daerah .
+
+
+###  http://ipb/ontologi_obat#kanderi(Lampung)
+<http://ipb/ontologi_obat#kanderi(Lampung)> rdf:type owl:NamedIndividual ,
+                                                     :nama_daerah .
+
+
+###  http://ipb/ontologi_obat#kong_gede(Sunda)
+<http://ipb/ontologi_obat#kong_gede(Sunda)> rdf:type owl:NamedIndividual ,
+                                                     :nama_daerah .
+
+
+###  http://ipb/ontologi_obat#kundi(Minangkabau)
+<http://ipb/ontologi_obat#kundi(Minangkabau)> rdf:type owl:NamedIndividual ,
+                                                       :nama_daerah .
+
+
+###  http://ipb/ontologi_obat#letih/lesu
+<http://ipb/ontologi_obat#letih/lesu> rdf:type owl:NamedIndividual ,
+                                               :penyakit ;
+                                      :bagian_yang_digunakan :daun ;
+                                      :diobati_oleh :Temulawak .
+
+
+###  http://ipb/ontologi_obat#maat_metan(Timor)
+<http://ipb/ontologi_obat#maat_metan(Timor)> rdf:type owl:NamedIndividual ,
+                                                      :nama_daerah .
+
+
+###  http://ipb/ontologi_obat#parusa(Mentawai)
+<http://ipb/ontologi_obat#parusa(Mentawai)> rdf:type owl:NamedIndividual ,
+                                                     :nama_daerah .
+
+
+###  http://ipb/ontologi_obat#piling_piling(Jawa)
+<http://ipb/ontologi_obat#piling_piling(Jawa)> rdf:type owl:NamedIndividual ,
+                                                        :nama_daerah .
+
+
+###  http://ipb/ontologi_obat#seklawan(Buru)
+<http://ipb/ontologi_obat#seklawan(Buru)> rdf:type owl:NamedIndividual ,
+                                                   :nama_daerah .
+
+
+###  http://ipb/ontologi_obat#seugew(Gayo)
+<http://ipb/ontologi_obat#seugew(Gayo)> rdf:type owl:NamedIndividual ,
+                                                 :nama_daerah .
+
+
+###  http://ipb/ontologi_obat#talpak_tana(Madura)
+<http://ipb/ontologi_obat#talpak_tana(Madura)> rdf:type owl:NamedIndividual ,
+                                                        :nama_daerah .
+
+
+###  http://ipb/ontologi_obat#taning_bajang(Dayak)
+<http://ipb/ontologi_obat#taning_bajang(Dayak)> rdf:type owl:NamedIndividual ,
+                                                         :nama_daerah .
+
+
+###  http://ipb/ontologi_obat#tapak_tangan(Jawa)
+<http://ipb/ontologi_obat#tapak_tangan(Jawa)> rdf:type owl:NamedIndividual ,
+                                                       :nama_daerah .
+
+
+###  http://ipb/ontologi_obat#temu_latah(Madura)
+<http://ipb/ontologi_obat#temu_latah(Madura)> rdf:type owl:NamedIndividual ,
+                                                       :nama_daerah .
+
+
+###  http://ipb/ontologi_obat#thaga(Aceh)
+<http://ipb/ontologi_obat#thaga(Aceh)> rdf:type owl:NamedIndividual ,
+                                                :nama_daerah .
+
+
+###  http://ipb/ontologi_obat#tutup_bumi(Sumatera)
+<http://ipb/ontologi_obat#tutup_bumi(Sumatera)> rdf:type owl:NamedIndividual ,
+                                                         :nama_daerah .
+
+
+###  http://ipb/ontologi_obat#walipopo(Gorontalo)
+<http://ipb/ontologi_obat#walipopo(Gorontalo)> rdf:type owl:NamedIndividual ,
+                                                        :nama_daerah .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :glycyrrhizin
+                        :isoflavoquinon
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
