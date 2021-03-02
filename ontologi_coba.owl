@@ -1,221 +1,260 @@
-<?xml version="1.0"?>
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ns0: <http://ipb/ontologi#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1: <http://ipb/ontologi_obatt#> .
 
+<http://ipb/ontologi_obatt>
+  a owl:Ontology ;
+  ns0:description "Ontologi tanaman obat Indonesia"^^xsd:string .
 
-<!DOCTYPE rdf:RDF [
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY Ontology1322757234707 "http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#" >
-]>
+ns0:description a owl:AnnotationProperty .
+<http://ipb/ontologi_obatt#bagian_yang_digunakan> a owl:ObjectProperty .
+<http://ipb/ontologi_obatt#diobati_oleh>
+  a owl:ObjectProperty ;
+  owl:inverseOf <http://ipb/ontologi_obatt#mengobati> ;
+  rdfs:domain <http://ipb/ontologi_obatt#penyakit> ;
+  rdfs:range <http://ipb/ontologi_obatt#tanaman_obat> .
 
+<http://ipb/ontologi_obatt#kandungan_senyawa_dari>
+  a owl:ObjectProperty ;
+  owl:inverseOf <http://ipb/ontologi_obatt#memiliki_kandungan_senyawa> ;
+  rdfs:domain <http://ipb/ontologi_obatt#kandungan_senyawa> ;
+  rdfs:range <http://ipb/ontologi_obatt#tanaman_obat> .
 
-<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#"
-    xml:base="http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:Ontology1322757234707="http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#">
-    <owl:Ontology rdf:about=""/>
-   
+<http://ipb/ontologi_obatt#memiliki_aktivitas_senyawa>
+  a owl:ObjectProperty, owl:InverseFunctionalProperty ;
+  rdfs:domain <http://ipb/ontologi_obatt#tanaman_obat> ;
+  rdfs:range <http://ipb/ontologi_obatt#aktivitas_senyawa> .
 
+<http://ipb/ontologi_obatt#memiliki_kandungan_senyawa>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://ipb/ontologi_obatt#tanaman_obat> ;
+  rdfs:range <http://ipb/ontologi_obatt#kandungan_senyawa> .
 
-    <!--
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+<http://ipb/ontologi_obatt#memiliki_nama_daerah>
+  a owl:ObjectProperty ;
+  owl:inverseOf <http://ipb/ontologi_obatt#nama_daerah_dari> ;
+  rdfs:domain <http://ipb/ontologi_obatt#tanaman_obat> ;
+  rdfs:range <http://ipb/ontologi_obatt#nama_daerah> .
 
-   
+<http://ipb/ontologi_obatt#memiliki_nama_latin>
+  a owl:ObjectProperty ;
+  owl:inverseOf <http://ipb/ontologi_obatt#nama_latin_dari> ;
+  rdfs:domain <http://ipb/ontologi_obatt#tanaman_obat> ;
+  rdfs:range <http://ipb/ontologi_obatt#nama_latin> .
 
+<http://ipb/ontologi_obatt#mengobati>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://ipb/ontologi_obatt#tanaman_obat> ;
+  rdfs:range <http://ipb/ontologi_obatt#penyakit> .
 
-    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#Undang -->
+<http://ipb/ontologi_obatt#nama_daerah_dari>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://ipb/ontologi_obatt#nama_daerah> ;
+  rdfs:range <http://ipb/ontologi_obatt#tanaman_obat> .
 
-    <owl:Class rdf:about="#Undang"/>
-   
+<http://ipb/ontologi_obatt#nama_latin_dari>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://ipb/ontologi_obatt#nama_latin> ;
+  rdfs:range <http://ipb/ontologi_obatt#tanaman_obat> .
 
+<http://ipb/ontologi_obatt#memiliki_efek_tanaman> a owl:DatatypeProperty .
+<http://ipb/ontologi_obatt#memiliki_kontraindikasi> a owl:DatatypeProperty .
+<http://ipb/ontologi_obatt#aktivitas_senyawa>
+  a owl:Class ;
+  rdfs:subClassOf <http://ipb/ontologi_obatt#kandungan_senyawa> .
 
-    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#isipenetapan -->
+<http://ipb/ontologi_obatt#bagian_tanaman> a owl:Class .
+<http://ipb/ontologi_obatt#cara_pemanfaatan> a owl:Class .
+<http://ipb/ontologi_obatt#efek_samping>
+  a owl:Class ;
+  rdfs:subClassOf <http://ipb/ontologi_obatt#efek_tanaman> .
 
-    <owl:Class rdf:about="#isipenetapan">
-        <rdfs:subClassOf rdf:resource="#menetapkan"/>
-    </owl:Class>
-   
+<http://ipb/ontologi_obatt#efek_tanaman> a owl:Class .
+<http://ipb/ontologi_obatt#kandungan_senyawa> a owl:Class .
+<http://ipb/ontologi_obatt#kontraindikasi>
+  a owl:Class ;
+  rdfs:subClassOf <http://ipb/ontologi_obatt#efek_tanaman> .
 
+<http://ipb/ontologi_obatt#manfaat_tanaman> a owl:Class .
+<http://ipb/ontologi_obatt#nama_daerah>
+  a owl:Class ;
+  rdfs:subClassOf <http://ipb/ontologi_obatt#nama_tanaman_obat> .
 
-    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#judul -->
+<http://ipb/ontologi_obatt#nama_latin>
+  a owl:Class ;
+  rdfs:subClassOf <http://ipb/ontologi_obatt#nama_tanaman_obat> .
 
-    <owl:Class rdf:about="#judul">
-        <rdfs:subClassOf rdf:resource="#Undang"/>
-    </owl:Class>
-   
+<http://ipb/ontologi_obatt#nama_tanaman_obat> a owl:Class .
+<http://ipb/ontologi_obatt#penyakit> a owl:Class .
+<http://ipb/ontologi_obatt#tanaman_obat> a owl:Class .
+<http://ipb/ontologi_obat#diare> a owl:NamedIndividual .
+<http://ipb/ontologi_obatt#Abrus_precatorius_L>
+  a owl:NamedIndividual, <http://ipb/ontologi_obatt#nama_latin> ;
+  owl:sameAs <http://ipb/ontologi_obatt#Saga>, <http://ipb/ontologi_obatt#ailalu_picar(Ambon)>, <http://ipb/ontologi_obatt#idi_idi_malako(Ternate_Tidore)>, <http://ipb/ontologi_obatt#kaca(Bugis)>, <http://ipb/ontologi_obatt#kalepip(Kalana)>, <http://ipb/ontologi_obatt#kanderi(Lampung)>, <http://ipb/ontologi_obatt#kundi(Minangkabau)>, <http://ipb/ontologi_obatt#maat_metan(Timor)>, <http://ipb/ontologi_obatt#parusa(Mentawai)>, <http://ipb/ontologi_obatt#piling_piling(Jawa)>, <http://ipb/ontologi_obatt#seklawan(Buru)>, <http://ipb/ontologi_obatt#seugew(Gayo)>, <http://ipb/ontologi_obatt#taning_bajang(Dayak)>, <http://ipb/ontologi_obatt#thaga(Aceh)>, <http://ipb/ontologi_obatt#walipopo(Gorontalo)> .
 
+<http://ipb/ontologi_obatt#Curcuma_xanthorriza_Roxb>
+  a owl:NamedIndividual, <http://ipb/ontologi_obatt#nama_latin> ;
+  owl:sameAs <http://ipb/ontologi_obatt#Temulawak>, <http://ipb/ontologi_obatt#kong_gede(Sunda)>, <http://ipb/ontologi_obatt#temu_latah(Madura)> .
 
-    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#memutuskan -->
+<http://ipb/ontologi_obatt#Elephantocopus_scaber_L>
+  a owl:NamedIndividual, <http://ipb/ontologi_obatt#nama_latin> ;
+  owl:sameAs <http://ipb/ontologi_obatt#Tapak_liman>, <http://ipb/ontologi_obatt#balagaduk(Jawa)>, <http://ipb/ontologi_obatt#jukut_cancang(Jawa)>, <http://ipb/ontologi_obatt#talpak_tana(Madura)>, <http://ipb/ontologi_obatt#tapak_tangan(Jawa)>, <http://ipb/ontologi_obatt#tutup_bumi(Sumatera)> .
 
-    <owl:Class rdf:about="#memutuskan"/>
-   
+<http://ipb/ontologi_obatt#Saga>
+  a owl:NamedIndividual, <http://ipb/ontologi_obatt#tanaman_obat> ;
+  owl:sameAs <http://ipb/ontologi_obatt#ailalu_picar(Ambon)>, <http://ipb/ontologi_obatt#idi_idi_malako(Ternate_Tidore)>, <http://ipb/ontologi_obatt#kaca(Bugis)>, <http://ipb/ontologi_obatt#kalepip(Kalana)>, <http://ipb/ontologi_obatt#kanderi(Lampung)>, <http://ipb/ontologi_obatt#kundi(Minangkabau)>, <http://ipb/ontologi_obatt#maat_metan(Timor)>, <http://ipb/ontologi_obatt#parusa(Mentawai)>, <http://ipb/ontologi_obatt#piling_piling(Jawa)>, <http://ipb/ontologi_obatt#seklawan(Buru)>, <http://ipb/ontologi_obatt#seugew(Gayo)>, <http://ipb/ontologi_obatt#taning_bajang(Dayak)>, <http://ipb/ontologi_obatt#thaga(Aceh)>, <http://ipb/ontologi_obatt#walipopo(Gorontalo)> ;
+  ns1:bagian_yang_digunakan ns1:daun ;
+  ns1:memiliki_aktivitas_senyawa ns1:anti_alergi, ns1:anti_inflamasi, ns1:menghilangkan_alergi, ns1:menghilangkan_rasa_nyeri ;
+  ns1:memiliki_kandungan_senyawa ns1:glycyrrhizin, ns1:isoflavoquinon ;
+  ns1:memiliki_nama_latin ns1:Abrus_precatorius_L ;
+  ns1:mengobati ns1:batuk, ns1:demam, ns1:hepatitis, ns1:keracunan, ns1:sariawan ;
+  ns1:memiliki_efek_tanaman "Penggunaan lama menyebabkan udem dan tekanan darah tinggi"^^xsd:string ;
+  ns1:memiliki_kontraindikasi "Gangguan jantung"^^xsd:string .
 
+ns1:Tapak_liman
+  a owl:NamedIndividual, ns1:tanaman_obat ;
+  owl:sameAs ns1:balagaduk(Jawa), ns1:jukut_cancang(Jawa), ns1:talpak_tana(Madura), ns1:tapak_tangan(Jawa), ns1:tutup_bumi(Sumatera) ;
+  ns1:memiliki_kandungan_senyawa ns1:fenol, ns1:flavonoida, ns1:tanin ;
+  ns1:memiliki_nama_latin ns1:Elephantocopus_scaber_L ;
+  ns1:mengobati ns1:kejang, <http://ipb/ontologi_obatt#letih/lesu> ;
+  ns1:memiliki_efek_tanaman "gemetar dan kelemahan otot"^^xsd:string ;
+  ns1:memiliki_kontraindikasi "kehamilan"^^xsd:string, "menyusui"^^xsd:string .
 
-    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#menetapkan -->
+ns1:Temulawak
+  a owl:NamedIndividual, ns1:tanaman_obat ;
+  owl:sameAs ns1:kong_gede(Sunda), ns1:temu_latah(Madura) ;
+  ns1:bagian_yang_digunakan ns1:rimpang ;
+  ns1:memiliki_kandungan_senyawa ns1:kurkumin, ns1:minyak_atsiri, ns1:xanthorizol ;
+  ns1:memiliki_nama_latin ns1:Curcuma_xanthorriza_Roxb ;
+  ns1:mengobati <http://ipb/ontologi_obat#diare>, ns1:batuk, ns1:demam, ns1:sariawan ;
+  ns1:memiliki_efek_tanaman "merangsang lambung"^^xsd:string ;
+  ns1:memiliki_kontraindikasi "sakit batu empedu"^^xsd:string .
 
-    <owl:Class rdf:about="#menetapkan">
-        <rdfs:subClassOf rdf:resource="#memutuskan"/>
-    </owl:Class>
-   
+ns1:akar a owl:NamedIndividual, ns1:bagian_tanaman .
+ns1:anti_alergi
+  a owl:NamedIndividual, ns1:aktivitas_senyawa ;
+  owl:sameAs ns1:menghilangkan_alergi .
 
+ns1:anti_diabetes a owl:NamedIndividual, ns1:aktivitas_senyawa .
+ns1:anti_inflamasi
+  a owl:NamedIndividual, ns1:aktivitas_senyawa ;
+  owl:sameAs ns1:menghilangkan_rasa_nyeri .
 
-    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#mengingat -->
+ns1:anti_mikroba
+  a owl:NamedIndividual, ns1:aktivitas_senyawa ;
+  owl:sameAs ns1:mengobati_jamur .
 
-    <owl:Class rdf:about="#mengingat"/>
-   
+ns1:anti_racun a owl:NamedIndividual, ns1:aktivitas_senyawa .
+ns1:anti_tumor
+  a owl:NamedIndividual, ns1:aktivitas_senyawa ;
+  owl:sameAs ns1:mengobati_tumor .
 
+ns1:batang a owl:NamedIndividual, ns1:bagian_tanaman .
+ns1:batuk
+  a owl:NamedIndividual, ns1:penyakit ;
+  ns1:diobati_oleh ns1:Saga, ns1:Tapak_liman .
 
-    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#menimbang -->
+ns1:biji a owl:NamedIndividual, ns1:bagian_tanaman .
+ns1:buah a owl:NamedIndividual, ns1:bagian_tanaman .
+ns1:daun a owl:NamedIndividual, ns1:bagian_tanaman .
+ns1:demam
+  a owl:NamedIndividual, ns1:penyakit ;
+  ns1:diobati_oleh ns1:Saga, ns1:Tapak_liman .
 
-    <owl:Class rdf:about="#menimbang"/>
-   
+ns1:fenol
+  a owl:NamedIndividual, ns1:kandungan_senyawa ;
+  ns1:kandungan_senyawa_dari ns1:Tapak_liman ;
+  ns1:memiliki_aktivitas_senyawa ns1:anti_mikroba, ns1:mengobati_jamur .
 
+ns1:flavonoida
+  a owl:NamedIndividual, ns1:kandungan_senyawa ;
+  ns1:kandungan_senyawa_dari ns1:Tapak_liman ;
+  ns1:memiliki_aktivitas_senyawa ns1:anti_diabetes, ns1:anti_tumor, ns1:mengobati_tumor .
 
-    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#nomor -->
+ns1:glycyrrhizin
+  a owl:NamedIndividual, ns1:kandungan_senyawa ;
+  ns1:kandungan_senyawa_dari ns1:Saga ;
+  ns1:memiliki_aktivitas_senyawa ns1:anti_inflamasi, ns1:menghilangkan_rasa_nyeri .
 
-    <owl:Class rdf:about="#nomor"/>
-   
+ns1:hepatitis
+  a owl:NamedIndividual, ns1:penyakit ;
+  ns1:diobati_oleh ns1:Saga .
 
+ns1:isoflavoquinon
+  a owl:NamedIndividual, ns1:kandungan_senyawa ;
+  ns1:kandungan_senyawa_dari ns1:Saga ;
+  ns1:memiliki_aktivitas_senyawa ns1:anti_alergi, ns1:menghilangkan_alergi .
 
-    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#pasal -->
+ns1:kejang
+  a owl:NamedIndividual, ns1:penyakit ;
+  ns1:diobati_oleh ns1:Temulawak .
 
-    <owl:Class rdf:about="#pasal">
-        <rdfs:subClassOf rdf:resource="#menetapkan"/>
-    </owl:Class>
-   
+ns1:keracunan
+  a owl:NamedIndividual, ns1:penyakit ;
+  ns1:diobati_oleh ns1:Saga .
 
+ns1:kurkumin
+  a owl:NamedIndividual, ns1:kandungan_senyawa ;
+  ns1:kandungan_senyawa_dari ns1:Temulawak ;
+  ns1:memiliki_aktivitas_senyawa ns1:menurunkan_kolestrol .
 
-    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#pembukapertimbangan -->
+ns1:menghilangkan_alergi a owl:NamedIndividual, ns1:aktivitas_senyawa .
+ns1:menghilangkan_rasa_nyeri a owl:NamedIndividual, ns1:aktivitas_senyawa .
+ns1:mengobati_jamur a owl:NamedIndividual, ns1:aktivitas_senyawa .
+ns1:mengobati_tumor a owl:NamedIndividual, ns1:aktivitas_senyawa .
+ns1:menurunkan_kolestrol a owl:NamedIndividual, ns1:aktivitas_senyawa .
+ns1:minyak_atsiri
+  a owl:NamedIndividual, ns1:kandungan_senyawa ;
+  ns1:kandungan_senyawa_dari ns1:Temulawak ;
+  ns1:memiliki_aktivitas_senyawa ns1:menurunkan_kolestrol .
 
-    <owl:Class rdf:about="#pembukapertimbangan">
-        <rdfs:subClassOf rdf:resource="#ucapanpembuka"/>
-    </owl:Class>
-   
+ns1:penyembuh_luka a owl:NamedIndividual, ns1:aktivitas_senyawa .
+ns1:rimpang a owl:NamedIndividual, ns1:bagian_tanaman .
+ns1:sariawan
+  a owl:NamedIndividual, ns1:penyakit ;
+  ns1:diobati_oleh ns1:Saga, ns1:Tapak_liman .
 
+ns1:tanin
+  a owl:NamedIndividual, ns1:kandungan_senyawa ;
+  ns1:kandungan_senyawa_dari ns1:Tapak_liman ;
+  ns1:memiliki_aktivitas_senyawa ns1:anti_racun .
 
-    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#penetapan -->
+ns1:xanthorizol
+  a owl:NamedIndividual, ns1:kandungan_senyawa ;
+  ns1:kandungan_senyawa_dari ns1:Temulawak ;
+  ns1:memiliki_aktivitas_senyawa ns1:menurunkan_kolestrol .
 
-    <owl:Class rdf:about="#penetapan"/>
-   
+ns1:ailalu_picar(Ambon) a owl:NamedIndividual, ns1:nama_daerah .
+ns1:balagaduk(Jawa) a owl:NamedIndividual, ns1:nama_daerah .
+ns1:idi_idi_malako(Ternate_Tidore) a owl:NamedIndividual, ns1:nama_daerah .
+ns1:jukut_cancang(Jawa) a owl:NamedIndividual, ns1:nama_daerah .
+ns1:kaca(Bugis) a owl:NamedIndividual, ns1:nama_daerah .
+ns1:kalepip(Kalana) a owl:NamedIndividual, ns1:nama_daerah .
+ns1:kanderi(Lampung) a owl:NamedIndividual, ns1:nama_daerah .
+ns1:kong_gede(Sunda) a owl:NamedIndividual, ns1:nama_daerah .
+ns1:kundi(Minangkabau) a owl:NamedIndividual, ns1:nama_daerah .
+<http://ipb/ontologi_obatt#letih/lesu>
+  a owl:NamedIndividual, ns1:penyakit ;
+  ns1:bagian_yang_digunakan ns1:daun ;
+  ns1:diobati_oleh ns1:Temulawak .
 
-
-    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#pertimbangan -->
-
-    <owl:Class rdf:about="#pertimbangan">
-        <rdfs:subClassOf rdf:resource="#ucapanpembuka"/>
-    </owl:Class>
-   
-
-
-    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#tentang -->
-
-    <owl:Class rdf:about="#tentang"/>
-   
-
-
-    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#ucapanpembuka -->
-
-    <owl:Class rdf:about="#ucapanpembuka"/>
-</rdf:RDF>
-
--OWL/XML Rendering
-<?xml version="1.0"?>
-
-
-<!DOCTYPE Ontology [
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY Ontology1322757234707 "http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#" >
-]>
-
-
-<Ontology xmlns="http://www.w3.org/2006/12/owl2-xml#"
-     xml:base="http://www.w3.org/2006/12/owl2-xml#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:Ontology1322757234707="http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#"
-     URI="http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl">
-    <Declaration>
-        <Class URI="&Ontology1322757234707;Undang"/>
-    </Declaration>
-    <SubClassOf>
-        <Class URI="&Ontology1322757234707;isipenetapan"/>
-        <Class URI="&Ontology1322757234707;menetapkan"/>
-    </SubClassOf>
-    <Declaration>
-        <Class URI="&Ontology1322757234707;isipenetapan"/>
-    </Declaration>
-    <SubClassOf>
-        <Class URI="&Ontology1322757234707;judul"/>
-        <Class URI="&Ontology1322757234707;Undang"/>
-    </SubClassOf>
-    <Declaration>
-        <Class URI="&Ontology1322757234707;judul"/>
-    </Declaration>
-    <Declaration>
-        <Class URI="&Ontology1322757234707;memutuskan"/>
-    </Declaration>
-    <SubClassOf>
-        <Class URI="&Ontology1322757234707;menetapkan"/>
-        <Class URI="&Ontology1322757234707;memutuskan"/>
-    </SubClassOf>
-    <Declaration>
-        <Class URI="&Ontology1322757234707;menetapkan"/>
-    </Declaration>
-    <Declaration>
-        <Class URI="&Ontology1322757234707;mengingat"/>
-    </Declaration>
-    <Declaration>
-        <Class URI="&Ontology1322757234707;menimbang"/>
-    </Declaration>
-    <Declaration>
-        <Class URI="&Ontology1322757234707;nomor"/>
-    </Declaration>
-    <SubClassOf>
-        <Class URI="&Ontology1322757234707;pasal"/>
-        <Class URI="&Ontology1322757234707;menetapkan"/>
-    </SubClassOf>
-    <Declaration>
-        <Class URI="&Ontology1322757234707;pasal"/>
-    </Declaration>
-    <SubClassOf>
-        <Class URI="&Ontology1322757234707;pembukapertimbangan"/>
-        <Class URI="&Ontology1322757234707;ucapanpembuka"/>
-    </SubClassOf>
-    <Declaration>
-        <Class URI="&Ontology1322757234707;pembukapertimbangan"/>
-    </Declaration>
-    <Declaration>
-        <Class URI="&Ontology1322757234707;penetapan"/>
-    </Declaration>
-    <SubClassOf>
-        <Class URI="&Ontology1322757234707;pertimbangan"/>
-        <Class URI="&Ontology1322757234707;ucapanpembuka"/>
-    </SubClassOf>
-    <Declaration>
-        <Class URI="&Ontology1322757234707;pertimbangan"/>
-    </Declaration>
-    <Declaration>
-        <Class URI="&Ontology1322757234707;tentang"/>
-    </Declaration>
-    <Declaration>
-        <Class URI="&Ontology1322757234707;ucapanpembuka"/>
-    </Declaration>
-</Ontology>
+ns1:maat_metan(Timor) a owl:NamedIndividual, ns1:nama_daerah .
+ns1:parusa(Mentawai) a owl:NamedIndividual, ns1:nama_daerah .
+ns1:piling_piling(Jawa) a owl:NamedIndividual, ns1:nama_daerah .
+ns1:seklawan(Buru) a owl:NamedIndividual, ns1:nama_daerah .
+ns1:seugew(Gayo) a owl:NamedIndividual, ns1:nama_daerah .
+ns1:talpak_tana(Madura) a owl:NamedIndividual, ns1:nama_daerah .
+ns1:taning_bajang(Dayak) a owl:NamedIndividual, ns1:nama_daerah .
+ns1:tapak_tangan(Jawa) a owl:NamedIndividual, ns1:nama_daerah .
+ns1:temu_latah(Madura) a owl:NamedIndividual, ns1:nama_daerah .
+ns1:thaga(Aceh) a owl:NamedIndividual, ns1:nama_daerah .
+ns1:tutup_bumi(Sumatera) a owl:NamedIndividual, ns1:nama_daerah .
+ns1:walipopo(Gorontalo) a owl:NamedIndividual, ns1:nama_daerah .
+[]
+  a owl:AllDifferent ;
+  owl:distinctMembers (
+   ns1:glycyrrhizin
+   ns1:isoflavoquinon
+ ) .
