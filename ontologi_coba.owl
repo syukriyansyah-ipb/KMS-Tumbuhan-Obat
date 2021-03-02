@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY Ontology1322757234707 "http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#"
+    xml:base="http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:Ontology1322757234707="http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#">
+    <owl:Ontology rdf:about=""/>
+   
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+   
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#Undang -->
+
+    <owl:Class rdf:about="#Undang"/>
+   
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#isipenetapan -->
+
+    <owl:Class rdf:about="#isipenetapan">
+        <rdfs:subClassOf rdf:resource="#menetapkan"/>
+    </owl:Class>
+   
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#judul -->
+
+    <owl:Class rdf:about="#judul">
+        <rdfs:subClassOf rdf:resource="#Undang"/>
+    </owl:Class>
+   
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#memutuskan -->
+
+    <owl:Class rdf:about="#memutuskan"/>
+   
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#menetapkan -->
+
+    <owl:Class rdf:about="#menetapkan">
+        <rdfs:subClassOf rdf:resource="#memutuskan"/>
+    </owl:Class>
+   
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#mengingat -->
+
+    <owl:Class rdf:about="#mengingat"/>
+   
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#menimbang -->
+
+    <owl:Class rdf:about="#menimbang"/>
+   
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#nomor -->
+
+    <owl:Class rdf:about="#nomor"/>
+   
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#pasal -->
+
+    <owl:Class rdf:about="#pasal">
+        <rdfs:subClassOf rdf:resource="#menetapkan"/>
+    </owl:Class>
+   
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#pembukapertimbangan -->
+
+    <owl:Class rdf:about="#pembukapertimbangan">
+        <rdfs:subClassOf rdf:resource="#ucapanpembuka"/>
+    </owl:Class>
+   
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#penetapan -->
+
+    <owl:Class rdf:about="#penetapan"/>
+   
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#pertimbangan -->
+
+    <owl:Class rdf:about="#pertimbangan">
+        <rdfs:subClassOf rdf:resource="#ucapanpembuka"/>
+    </owl:Class>
+   
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#tentang -->
+
+    <owl:Class rdf:about="#tentang"/>
+   
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#ucapanpembuka -->
+
+    <owl:Class rdf:about="#ucapanpembuka"/>
+</rdf:RDF>
+
+-OWL/XML Rendering
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY Ontology1322757234707 "http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2006/12/owl2-xml#"
+     xml:base="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:Ontology1322757234707="http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl#"
+     URI="http://www.semanticweb.org/ontologies/2011/11/Ontology1322757234707.owl">
+    <Declaration>
+        <Class URI="&Ontology1322757234707;Undang"/>
+    </Declaration>
+    <SubClassOf>
+        <Class URI="&Ontology1322757234707;isipenetapan"/>
+        <Class URI="&Ontology1322757234707;menetapkan"/>
+    </SubClassOf>
+    <Declaration>
+        <Class URI="&Ontology1322757234707;isipenetapan"/>
+    </Declaration>
+    <SubClassOf>
+        <Class URI="&Ontology1322757234707;judul"/>
+        <Class URI="&Ontology1322757234707;Undang"/>
+    </SubClassOf>
+    <Declaration>
+        <Class URI="&Ontology1322757234707;judul"/>
+    </Declaration>
+    <Declaration>
+        <Class URI="&Ontology1322757234707;memutuskan"/>
+    </Declaration>
+    <SubClassOf>
+        <Class URI="&Ontology1322757234707;menetapkan"/>
+        <Class URI="&Ontology1322757234707;memutuskan"/>
+    </SubClassOf>
+    <Declaration>
+        <Class URI="&Ontology1322757234707;menetapkan"/>
+    </Declaration>
+    <Declaration>
+        <Class URI="&Ontology1322757234707;mengingat"/>
+    </Declaration>
+    <Declaration>
+        <Class URI="&Ontology1322757234707;menimbang"/>
+    </Declaration>
+    <Declaration>
+        <Class URI="&Ontology1322757234707;nomor"/>
+    </Declaration>
+    <SubClassOf>
+        <Class URI="&Ontology1322757234707;pasal"/>
+        <Class URI="&Ontology1322757234707;menetapkan"/>
+    </SubClassOf>
+    <Declaration>
+        <Class URI="&Ontology1322757234707;pasal"/>
+    </Declaration>
+    <SubClassOf>
+        <Class URI="&Ontology1322757234707;pembukapertimbangan"/>
+        <Class URI="&Ontology1322757234707;ucapanpembuka"/>
+    </SubClassOf>
+    <Declaration>
+        <Class URI="&Ontology1322757234707;pembukapertimbangan"/>
+    </Declaration>
+    <Declaration>
+        <Class URI="&Ontology1322757234707;penetapan"/>
+    </Declaration>
+    <SubClassOf>
+        <Class URI="&Ontology1322757234707;pertimbangan"/>
+        <Class URI="&Ontology1322757234707;ucapanpembuka"/>
+    </SubClassOf>
+    <Declaration>
+        <Class URI="&Ontology1322757234707;pertimbangan"/>
+    </Declaration>
+    <Declaration>
+        <Class URI="&Ontology1322757234707;tentang"/>
+    </Declaration>
+    <Declaration>
+        <Class URI="&Ontology1322757234707;ucapanpembuka"/>
+    </Declaration>
+</Ontology>
